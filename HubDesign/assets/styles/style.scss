@@ -1,0 +1,156 @@
+// Variables 
+$babyBlueColor:rgb(210, 227, 238);
+$blueColor:#4342A9;
+$skyBlurColor:rgb(218, 238, 250);
+$blackColor:rgb(43, 38, 40);
+$grayColor:#5F4D4A;
+$whiteColor:#fff;
+
+// Mixins
+@mixin navbar {
+    width: 400px;
+    height: 35px;
+    margin: 20px;
+}
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+// Global Style
+*{
+    padding: 0;
+    margin: 0;
+    font-family:  sans-serif;
+}
+
+body{
+    background-color: $babyBlueColor;
+}
+
+// Custom Style
+.wrapper{
+    background-color: $skyBlurColor;
+    margin: 60px;
+}
+
+.navbar{
+    @include flexbox;
+    &__left{
+        @include navbar;
+        display: inline-block;
+        display: flex;
+        &--links{
+            margin: 8px;
+        }
+    }
+    &__right{
+        @include navbar;
+        &--links{
+            text-align: end;
+            margin-right: 20px;
+        }
+    }
+    &__link{
+        display: inline-block;
+        font-size: 18px;
+        text-transform: capitalize;
+        margin-left: 30px;
+        .link{
+            text-decoration: none;
+            color: $blackColor;
+        }
+        &--pipe{
+            font-size: 25px;
+            opacity: 0.3;
+        }
+    }
+}
+
+.content{
+    @include flexbox;
+    &__left{
+        margin: 110px;
+        &--text{
+            font-size: 60px;
+            font-weight: bolder;
+            font-weight: 900;
+            color: $blackColor;
+        }
+        &--footer{
+            margin-top: 210px;
+            color: $blackColor;
+            font-size: 15px;
+            font-weight: bolder;
+            opacity: 0.8;
+            span{
+                color: $blueColor;
+            }
+        }
+    }
+    &__right{
+        &--image{
+            width:500px;
+            height:700px;
+        }
+    }
+}
+
+.form{
+    display: flex;
+    flex-flow: row wrap;
+    position: absolute;
+    margin-top: 30px;
+    &__input{
+        width:350px;
+        height:94px;
+        text-align: center;
+        border-style: none;
+    }
+    &__select{
+        width:350px;
+        height:94px;
+        text-align: center;
+        border-style: none;
+    }
+    &__button{
+        width:150px;
+        height:94px;
+        border-style: none;
+        background-color: $blueColor;
+        color: $whiteColor;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+}
+
+.footer{
+    @include flexbox;
+    height: 150px;
+    background-color: $whiteColor;
+    &__left{
+        &--text{
+            margin: 60px;
+            color: $blackColor;
+            font-size: 15px;
+            font-weight: bolder;
+            opacity: 0.6;
+            margin-left: 100px;
+        }
+    }
+    &__right{
+        margin: 30px;
+        word-spacing: 50px;
+        &--item{
+            text-decoration: none;
+        }
+        &--image{
+            width: 80px;
+            height: 25px;
+            margin-top: 20px;
+        }
+    }
+    &__link{
+        display: inline-block;
+    }
+}
